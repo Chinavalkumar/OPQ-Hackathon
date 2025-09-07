@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: appointment-service
+  name: appointment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: appointment-service
+      app: appointment
   template:
     metadata:
       labels:
-        app: appointment-service
+        app: appointment
     spec:
       containers:
-        - name: appointment-service
-          image: <ECR-IMAGE-URL>
+        - name: appointment
+          image: appointment:latest
           ports:
-            - containerPort: 3001
+            - containerPort: 4040
