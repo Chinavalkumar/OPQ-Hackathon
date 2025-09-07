@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: patient-service
+  name: patient
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: patient-service
+      app: patient
   template:
     metadata:
       labels:
-        app: patient-service
+        app: patient
     spec:
       containers:
-        - name: patient-service
-          image: <ECR-IMAGE-URL>
+        - name: patient
+          image: patient:latest
           ports:
-            - containerPort: 3000
+            - containerPort: 4141
